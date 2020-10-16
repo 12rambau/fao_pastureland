@@ -26,12 +26,12 @@ launch the `pastureland.ipynb` notebook and run all cells
 
 The full process takes **4h** 
 
-You could also consider using the pastureland.py file by runing :
+You could also consider using the `pastureland.py` file by runing :
 
 ```
 cd ~
 nohup python3 fao_pastureland/pasureland.py &
 ```
-:warning this file has 0 printing output and give no insight to the user, but at least now you can close SEPAL and have a kitkat.
+:warning: this file has 0 printing output and give no insight to the user, but at least now you can close SEPAL and have a kitkat.
 
 
