@@ -35,6 +35,7 @@ ecozones = {
 #####################
 wwf_biomes = os.path.join(get_tmp_dir(), 'wwf_biomes.tif') 
 llc_2000_map = os.path.join(get_tmp_dir(), 'LCCS-2000-{}.tif')
+llc_2015_map = os.path.join(get_tmp_dir(), 'LCCS-2015-{}.tif')
 
 #####################
 ##   output file   ##
@@ -42,6 +43,7 @@ llc_2000_map = os.path.join(get_tmp_dir(), 'LCCS-2000-{}.tif')
 pasture_masked = os.path.join(get_result_dir(), 'pasture_masked.tif')
 biomes_masked = os.path.join(get_result_dir(), 'wwf_biomes_masked.tif')
 llc_2000_map_masked = os.path.join(get_result_dir(), 'LCCS-2000-{}_masked.tif')
+llc_2015_map_masked = os.path.join(get_result_dir(), 'LCCS-2015-{}_masked.tif')
 
 #####################
 ##   input file    ##
@@ -49,6 +51,7 @@ llc_2000_map_masked = os.path.join(get_result_dir(), 'LCCS-2000-{}_masked.tif')
 pastureLand_raster = os.path.join(get_data_dir(),  'pasture.tif')
 tnc_ecozone_shp = os.path.join(get_data_dir(), 'wwf',  'wwf_terr_ecos.shp')
 llc_2000_raster = os.path.join(get_data_dir(), 'ESACCI-LC-L4-LCCS-Map-300m-P1Y-2000-v2.0.7.tif')
+llc_2015_raster = os.path.join(get_data_dir(), 'ESACCI-LC-L4-LCCS-Map-300m-P1Y-2015-v2.0.7.tif')
 
 ####################
 ##  dataframes    ##

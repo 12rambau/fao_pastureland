@@ -196,17 +196,18 @@ def main():
         with rasterio.open(pm.biomes_masked, "w", **out_meta) as dst:
             dst.write(out_image)
             
-    ##############################
-    ##      2000 LLC zones      ##
-    ##############################
+    #####################
+    ##      zones      ##
+    #####################
     
     # value of max polygone
-    # comment to create the full map
+    # put to 0 to execute the whole LMIC
     # the 200 first values are placed in the north of kazakstan
-    #max_polygon = 200
+    max_polygon = 0
     
-    gdf_grid = get_grid(pm.pasture_masked)
+    gdf_grid = get_grid(pm.pasture_masked, max_polygon=max_polygon)
     
+    # 2000
     gdf_zonal = gdf_zonal_stats(gdf_grid, pm.llc_2000_raster)
     
     #create the ecozones 
@@ -226,6 +227,26 @@ def main():
                 pm.llc_2000_map.format(zone), 
                 pm.pasture_masked.format(zone),
                 pm.llc_2000_map_masked.format(zone)
+            )
+            
+    # 2015
+    gdf_zonal = gdf_zonal_stats(gdf_grid, pm.llc_2015_raster)
+    
+    #create the ecozones 
+    for index, zone in enumerate(ecozones):
+    
+        if zone in gdf_zonal.columns:
+            fraction_raster(
+                gdf_zonal, 
+                zone, 
+                pm.pasture_masked, 
+                pm.llc_2015_map.format(zone)
+            )
+            
+            align_raster(
+                pm.llc_2015_map.format(zone), 
+                pm.pasture_masked.format(zone),
+                pm.llc_2015_map_masked.format(zone)
             )
             
     return 
